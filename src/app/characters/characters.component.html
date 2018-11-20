@@ -1,0 +1,13 @@
+<h2>My Characters</h2>
+<!-- Display the Character Details on the badge -->
+<ul class="characters col-sd-12 col-md-6 col-ld-6">
+    <li *ngFor="let character of characters[0].characters" [class.selected]="character === selectedCharacter" (click)="onSelect(character)">
+        <span class="badge">{{character.name}}</span>
+    </li>
+</ul>
+<!-- Display the Character Details based on the selection from the badge -->
+<div class="selectedCharacter col-sd-12 col-md-6 col-ld-6" *ngIf="selectedCharacter">
+    <h2>{{selectedCharacter.name | uppercase}} Details</h2>
+    <div><span>Name: </span>{{selectedCharacter.name}}</div>
+    <div><span>URL: </span>{{selectedCharacter.url}}</div>
+</div>
